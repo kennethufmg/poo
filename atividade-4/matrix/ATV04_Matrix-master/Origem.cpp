@@ -14,7 +14,7 @@ int main()
 	//Teste dos diferentes tipos de construtores
 	Matrix Z(File);
 	Matrix Y(3, 2,7.1);
-	Matrix X(4, 1,4);
+	Matrix X(4, 4,4);
 	Matrix W();
 	Matrix K(1, 2);
 	
@@ -32,7 +32,7 @@ int main()
 	std::cout << endl << "X:: " << std::endl;
 	X.print();
 	std::cout << "Numero de linhas de X:: " << X.getRows();
-	std::cout << "Numero de colunas de X:: " << X.getCols();
+	std::cout << "Numero de colunas de X:: " << X.getCols();	
 	
 	std::cout << endl << "W:: " << std::endl;
 	W.print();
@@ -56,7 +56,23 @@ int main()
 	
 	std::cout << "Numero de linhas de X:: " << X.getRows();
 	std::cout << "Numero de colunas de X:: " << X.getCols();
-
+	
+	//Teste de novas funçoes:
+	cout<<" Tornar a matrix X uma matrix identidade"<<endl;
+	X.unit();
+	std::cout << endl << "X:: " << std::endl;
+	X.print();
+	
+	cout<<" Zerar a matrix Z"<<endl;
+	Z.zeros();
+	std::cout << endl << "Z:: " << std::endl;
+	Z.print();
+	
+	cout<<" Tornar a matriz K somente com elmentos uns"<<endl;
+	K.ones();
+	std::cout << endl << "K:: " << std::endl;
+	K.print();
+	
 	File.close();
 	return 0;
 }
